@@ -1,0 +1,28 @@
+{
+  "selected_model": "logistic_regression",
+  "selection_metric": "holdout_roc_auc",
+  "metrics": {
+    "accuracy": 0.8688524590163934,
+    "precision": 0.8125,
+    "recall": 0.9285714285714286,
+    "f1": 0.8666666666666667,
+    "roc_auc": 0.9610389610389611,
+    "best_cv_roc_auc": 0.9113290091550962
+  },
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "random_state": 42
+}
