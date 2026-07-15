@@ -1,26 +1,27 @@
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     container_name: heart-disease-api
     ports:
       - "8000:8000"
 
   prometheus:
     image: prom/prometheus:latest
-    container_name: heart-prometheus
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    container_name: heart-disease-prometheus
     ports:
       - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
     depends_on:
       - api
 
   grafana:
     image: grafana/grafana:latest
-    container_name: heart-grafana
+    container_name: heart-disease-grafana
     ports:
       - "3000:3000"
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards:ro
     depends_on:
       - prometheus
