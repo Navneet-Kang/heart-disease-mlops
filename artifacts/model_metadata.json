@@ -1,0 +1,53 @@
+{
+  "selected_model": "logistic_regression",
+  "selection_metric": "cross_validation_roc_auc",
+  "model_path": "C:\\Users\\Navneet Kang\\Desktop\\heart-disease-mlops\\heart-disease-mlops\\models\\heart_disease_pipeline.joblib",
+  "mlflow_database": "C:\\Users\\Navneet Kang\\Desktop\\heart-disease-mlops\\heart-disease-mlops\\mlflow.db",
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "random_state": 42,
+  "train_rows": 242,
+  "test_rows": 61,
+  "results": [
+    {
+      "model": "logistic_regression",
+      "best_cv_roc_auc": 0.9113290091550962,
+      "accuracy": 0.8688524590163934,
+      "precision": 0.8125,
+      "recall": 0.9285714285714286,
+      "f1": 0.8666666666666667,
+      "roc_auc": 0.9610389610389611,
+      "best_params": {
+        "classifier__C": 0.1,
+        "classifier__solver": "liblinear"
+      }
+    },
+    {
+      "model": "random_forest",
+      "best_cv_roc_auc": 0.8999183586140107,
+      "accuracy": 0.9016393442622951,
+      "precision": 0.84375,
+      "recall": 0.9642857142857143,
+      "f1": 0.9,
+      "roc_auc": 0.9545454545454546,
+      "best_params": {
+        "classifier__max_depth": 5,
+        "classifier__min_samples_leaf": 2,
+        "classifier__n_estimators": 200
+      }
+    }
+  ]
+}
